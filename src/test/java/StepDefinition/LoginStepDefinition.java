@@ -22,11 +22,11 @@ public class LoginStepDefinition {
 		driver.get("https://saucedemo.com/v1/");
 	}
 
-	@When("User enters valid username and password")
-	public void user_enters_valid_username_and_password() {
+	@When("User enters valid {string} and {string}")
+	public void user_enters_valid_username_and_password(String username, String password) {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+		driver.findElement(By.id("user-name")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 	}
 
 	@And("clicks on Login Button")
